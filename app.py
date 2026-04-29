@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 # ── 資料庫連線設定（對應您的 XAMPP）──────────────────────
 DB_CONFIG = {
-    "host":     "127.0.0.1",
-    "port":     3306,
-    "user":     "root",
-    "password": "",           # XAMPP 預設沒有密碼
-    "database": "sensor_project"
+    "host":     os.environ["MYSQLHOST"],
+    "port":     int(os.environ["MYSQLPORT"]),
+    "user":     os.environ["MYSQLUSER"],
+    "password": os.environ["MYSQLPASSWORD"],
+    "database": os.environ["MYSQLDATABASE"]
 }
 
 AUTH_TOKEN = "Bearer bf963447-1e9d-4855-81fa-329e84e4bd18"
